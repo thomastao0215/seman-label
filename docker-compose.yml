@@ -35,9 +35,9 @@ services:
       - DJANGO_DB=default
       - POSTGRE_NAME=postgres
       - POSTGRE_USER=postgres
-      - POSTGRE_PASSWORD=
+      - POSTGRE_PASSWORD=4xHG0qsy1YZaUvKzlmt3
       - POSTGRE_PORT=5432
-      - POSTGRE_HOST=db
+      - POSTGRE_HOST=database-2.c0my6tdbvyjd.ap-east-1.rds.amazonaws.com
       - LABEL_STUDIO_HOST=${LABEL_STUDIO_HOST:-}
       - JSON_LOG=1
 #      - LOG_LEVEL=DEBUG
