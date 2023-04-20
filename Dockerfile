@@ -4,10 +4,10 @@ FROM node:14 AS frontend-builder
 ENV NPM_CACHE_LOCATION=$HOME/.npm \
     PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 
-WORKDIR /label-studio/label_studio/frontend
+WORKDIR /seman-label/label_studio/frontend
 
 COPY --chown=1001:0 label_studio/frontend .
-COPY --chown=1001:0 label_studio/__init__.py /label-studio/label_studio/__init__.py
+COPY --chown=1001:0 label_studio/__init__.py /seman-label/label_studio/__init__.py
 
 RUN --mount=type=cache,target=$NPM_CACHE_LOCATION,uid=1001,gid=0 \
     npm ci \
@@ -69,7 +69,7 @@ RUN --mount=type=cache,target=$PIP_CACHE_DIR,uid=1001,gid=0 \
     chmod -R g=u $LS_DIR
 
 RUN rm -rf ./label_studio/frontend
-COPY --chown=1001:0 --from=frontend-builder /label-studio/label_studio/frontend/dist ./label_studio/frontend/dist
+COPY --chown=1001:0 --from=frontend-builder /seman-label/label_studio/frontend/dist ./label_studio/frontend/dist
 
 RUN python3 label_studio/manage.py collectstatic --no-input && \
     chown -R 1001:0 $LS_DIR && \
