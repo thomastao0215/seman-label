@@ -37,7 +37,7 @@ services:
       - POSTGRE_USER=postgres
       - POSTGRE_PASSWORD=Seman2023!
       - POSTGRE_PORT=5432
-      - POSTGRE_HOST=database-3.c0my6tdbvyjd.ap-east-1.rds.amazonaws.com
+      - POSTGRE_HOST=database-4.c0my6tdbvyjd.ap-east-1.rds.amazonaws.com
       - LABEL_STUDIO_HOST=${LABEL_STUDIO_HOST:-}
       - JSON_LOG=1
 #      - LOG_LEVEL=DEBUG
